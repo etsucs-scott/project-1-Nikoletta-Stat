@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace AdventureGame.Core
 {
-    public class Potion
+    public class Potion : Item
     {
+        public int potionHealth { get; set; } = 20;
     }
 }

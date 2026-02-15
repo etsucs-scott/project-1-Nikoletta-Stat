@@ -8,6 +8,8 @@ namespace AdventureGame.Core
 {
     public class Weapon : Item
     {
-
+        public int modifier {  get; set; }
+        public string name { get; }
+        public string pickupMessage { get; set; }
     }
 }
