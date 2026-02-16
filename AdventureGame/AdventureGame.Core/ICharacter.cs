@@ -4,7 +4,6 @@
     {
         int Health { get; }
         int BaseDamage { get; }
-        char Symbol { get; }
         void Attack(ICharacter target);
         void TakeDamage();
 

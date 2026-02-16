@@ -11,13 +11,12 @@ namespace AdventureGame.Core
         public int baseHealth = 50;
         public int Health { get; set; }
 
-        public int BaseDamage { get; set; } = 10;
-
-        public char Symbol { get; set; } = 'M';
+        public int BaseDamage { get; set; } 
 
         public Monster()
         {
             Health = baseHealth;
+            BaseDamage = 10;
         }
 
         public void Attack (ICharacter target)

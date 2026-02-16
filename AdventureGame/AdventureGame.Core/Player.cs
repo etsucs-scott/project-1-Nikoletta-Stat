@@ -5,14 +5,18 @@
         public const int baseHealth = 100;
         public int Health { get; private set; }
 
+        public int xPos { get; set; }
+        public int yPos { get; set; }
+
         public Player()
         {
             Health = baseHealth;
+            xPos = 1;
+            yPos = 1;
         }
         public int BaseDamage { get; private set; } = 10;
 
         public List<Item> Inventory = new List<Item>();
-        public char Symbol { get; private set; } = 'P';
         public void Attack(ICharacter target)
         {
             target.TakeDamage();
@@ -27,7 +31,7 @@
         public void PickUpItem (Item item)
         {
             if (item is Potion potion)
-                Heal();
+                Heal(potion);
             else
                 Inventory.Add(item);
         }
@@ -46,9 +50,9 @@
             return highestMod;
         }
 
-        public void Heal ()
+        public void Heal (Potion potion)
         {
-            Health += 20;
+            Health += potion.potionHealth;
             if (Health > baseHealth)
                 Health = baseHealth;
         }

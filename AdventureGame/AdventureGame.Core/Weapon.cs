@@ -8,8 +8,11 @@ namespace AdventureGame.Core
 {
     public class Weapon : Item
     {
-        public int modifier {  get; set; }
-        public string name { get; }
-        public string pickupMessage { get; set; }
+        public int modifier { get; set; }
+
+        public Weapon(int modifier) : base("Weapon", "You have picked up a weapon! +" + modifier + " damage.")
+        {
+            this.modifier = modifier;
+        }
     }
 }

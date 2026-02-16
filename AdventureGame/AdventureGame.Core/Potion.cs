@@ -8,6 +8,11 @@ namespace AdventureGame.Core
 {
     public class Potion : Item
     {
-        public int potionHealth { get; set; } = 20;
+        public int potionHealth { get; set; }
+
+        public Potion() : base("Potion", "You have picked up a potion! +20 HP")
+        {
+            potionHealth = 20;
+        }
     }
 }

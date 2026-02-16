@@ -8,8 +8,14 @@ namespace AdventureGame.Core
 {
     public class Item
     {
-        public string Name { get; }
-        public string pickupMessage { get; }
+        public string Name { get; set; } = string.Empty;
+        public string pickupMessage { get; set; } = string.Empty;
+
+        public Item (string Name, string pickupMessage)
+        {
+            this.Name = Name;
+            this.pickupMessage = pickupMessage;
+        }
 
     }
 }
