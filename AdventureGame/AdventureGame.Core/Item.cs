@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace AdventureGame.Core
 {
+    // Base class Item
     public class Item
     {
+        // Items are required to have a name and a pickup message.
         public string Name { get; set; } = string.Empty;
         public string pickupMessage { get; set; } = string.Empty;
 

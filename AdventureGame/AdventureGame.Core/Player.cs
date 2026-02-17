@@ -21,7 +21,9 @@
         }
 
         public List<Item> Inventory = new List<Item>();
-        public void Attack(ICharacter target)
+
+        // Attack() is called from Game.Battle()
+        public void Attack(ICharacter target) 
         {
             target.TakeDamage(damage);
         }
@@ -31,6 +33,7 @@
             Health -= damage;
         }
 
+        // PickUpItem() adds weapons to inventory list and calls the Heal() method.
         public void PickUpItem (Item item)
         {
             if (item is Potion potion)
@@ -39,6 +42,7 @@
                 Inventory.Add(item);
         }
 
+        // Checks each weapon in inventory and returns the highest modifier integer.
         public int GetHighestModifier ()
         {
             int highestMod = 0;
@@ -53,6 +57,7 @@
             return highestMod;
         }
 
+        // Adds HP to player's health.
         public void Heal (Potion potion)
         {
             Health += potion.potionHealth;

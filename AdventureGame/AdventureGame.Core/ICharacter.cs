@@ -1,5 +1,6 @@
 ﻿namespace AdventureGame.Core
 {
+    // ICharacter interface lists the required attributes of ICharacters like player and monster.
     public interface ICharacter
     {
         int Health { get; }

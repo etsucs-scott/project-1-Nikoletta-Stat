@@ -13,6 +13,8 @@ namespace AdventureGame.Core
         public int width { get; set; }
         public int height { get; set; }
         public char symbol { get; set; }
+
+        // the actual maze is a 2D array of characters.
         public char[,] tiles { get; set; }
 
         Random random = new();
@@ -57,7 +59,8 @@ namespace AdventureGame.Core
         {
             tiles[player.xPos, player.yPos] = '@';
         }
-
+        
+        // PlaceExit() assigns a random tile as the exit after checking to ensure that tile is blank.
         public void PlaceExit ()
         {
             while (true)
@@ -73,6 +76,7 @@ namespace AdventureGame.Core
             }
         }
 
+        // PlaceMonster() checks to make sure a random tile is blank, and then assigns the monster symbol to that tile.
         public void PlaceMonster ()
         {
             while (true)
@@ -90,10 +94,13 @@ namespace AdventureGame.Core
             }
             
         }
+
+        // PlaceInsideWalls() creates a hardcoded number of randomized walls inside the maze, calls CheckAround()
+        // to make sure there is still a path around the random tiles.
         public void PlaceInsideWalls ()
         {
             int wallCount = 0;
-            while (wallCount < 10)
+            while (wallCount < 5)
             {
                 int randomRow = random.Next(1, height - 1);
                 int randomCol = random.Next(1, width - 1);
@@ -106,6 +113,8 @@ namespace AdventureGame.Core
 
         }
 
+        // CheckAround() counts how many tiles around the random tile are occupied, returns true if at least one of the tiles around
+        // the tile is empty.
         public bool CheckAround (int row, int column)
         {
             int numOccupied = 0;
@@ -124,6 +133,7 @@ namespace AdventureGame.Core
 
         }
 
+        // PlacePotion() picks a random tile and checks to make sure that tile is empty before setting it to the potion symbol.
         public void PlacePotion ()
         {
             while (true)
@@ -138,6 +148,7 @@ namespace AdventureGame.Core
             }
         }
 
+        // PlaceWeapon() picks a random tile and checks to make sure that tile is empty before setting it to the weapon symbol.
         public void PlaceWeapon()
         {
             while (true)
