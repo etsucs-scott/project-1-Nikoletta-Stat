@@ -93,7 +93,7 @@ namespace AdventureGame.Core
         public void PlaceInsideWalls ()
         {
             int wallCount = 0;
-            while (wallCount < 4)
+            while (wallCount < 10)
             {
                 int randomRow = random.Next(1, height - 1);
                 int randomCol = random.Next(1, width - 1);

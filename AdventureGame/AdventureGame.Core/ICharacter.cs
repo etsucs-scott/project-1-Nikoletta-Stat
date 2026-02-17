@@ -4,8 +4,9 @@
     {
         int Health { get; }
         int BaseDamage { get; }
+        int damage { get; }
         void Attack(ICharacter target);
-        void TakeDamage();
+        void TakeDamage(int damage);
 
     }
 }

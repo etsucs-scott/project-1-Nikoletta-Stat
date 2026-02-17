@@ -8,23 +8,26 @@
         public int xPos { get; set; }
         public int yPos { get; set; }
 
+        public int damage { get; set; }
+
+        public int BaseDamage { get; private set; } = 10;
+
         public Player()
         {
             Health = baseHealth;
             xPos = 1;
             yPos = 1;
+            damage = BaseDamage;
         }
-        public int BaseDamage { get; private set; } = 10;
 
         public List<Item> Inventory = new List<Item>();
         public void Attack(ICharacter target)
         {
-            target.TakeDamage();
+            target.TakeDamage(damage);
         }
 
-        public void TakeDamage()
+        public void TakeDamage(int damage)
         {
-            int damage = BaseDamage + GetHighestModifier();
             Health -= damage;
         }
 

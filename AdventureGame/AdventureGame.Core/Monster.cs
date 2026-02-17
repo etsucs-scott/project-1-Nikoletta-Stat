@@ -13,20 +13,23 @@ namespace AdventureGame.Core
 
         public int BaseDamage { get; set; } 
 
+        public int damage { get; set; }
+
         public Monster()
         {
             Health = baseHealth;
             BaseDamage = 10;
+            damage = BaseDamage;
         }
 
         public void Attack (ICharacter target)
         {
-            target.TakeDamage();
+            target.TakeDamage(damage);
         }
 
-        public void TakeDamage()
+        public void TakeDamage(int damage)
         {
-            Health -= BaseDamage;
+            Health -= damage;
         }
 
 
