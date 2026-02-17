@@ -42,4 +42,6 @@ dotnet run --project ProjectName.App
 - Your repository history is part of your submission.
 - Update this README with build/run instructions specific to your project.
 
-## Nikoletta's Adventure Game
+Nikoletta's Adventure Game
+
+- This is a simple text based adventure game where a player navigates through a maze towards an exit. A player has the opportunity to pick up items such as weapons and potions to increase attack modifiers and health stats.
